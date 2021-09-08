@@ -1,25 +1,42 @@
 #include <iostream>
 using namespace std;
 
+
+
+
 class Worker{
+	//delaracja zmiennych czlonkowskich (wlasciwosci)
 	public:
-	// deklaracja zmiennych cz³onkowskich (w³aœciwoœci)
-	string name="Janusz";
+	string name = "Janusz";
 	string surname;
+	unsigned short int age;
 	
-	// deklaracja funkcji cz³onkowskiej (metoda)
+	//definicja funkcji czlonkowskiej (metoda)
 	void showData(){
-		cout << "Imiê";
+		cout << "ImiÄ™" << endl;
 	};
 	
-	
+	void showName(){
+		cout << name << endl;
+	}
 };
 
+
+
 int main(int argc, char** argv) {
-	setlocale(LC_CTYPE, "polish");
+	
+	setlocale(LC_CTYPE, "Polish");
+	
 	Worker pracownik;
 	
-	cout << pracownik.name;
+	cout << pracownik.name << endl;
 	pracownik.showData();
+	pracownik.surname = "Kowalski";
+	pracownik.name = "Andrzej";
+	cout << "ImiÄ™ i nazwisko: \n" << pracownik.name << " "<< pracownik.surname << endl;
+	pracownik.age = 16;
+	cout << "Wiek wynosi: " << pracownik.age << endl;
+	pracownik.showName();
+	
 	return 0;
 }
