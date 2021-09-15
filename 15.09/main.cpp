@@ -1,76 +1,52 @@
 #include <iostream>
 using namespace std;
 
-
-
-
-class Worker{
-	//delaracja zmiennych czlonkowskich (wlasciwosci)
+class Rectangle{
+	
 	public:
-	string name;
-	string surname;
-	string nationality;
-	string personality;
-	unsigned short int yearBirthday;
-	char gender;
-	
-	//definicja funkcji czlonkowskiej (metoda)
-	void showName(){
-		cout << "Imiê" << name;
-	};
-	
-	//deklaracja (prototyp) metody
-	void showSurname();
-	string showPersonality();
-	void showAllData();
-	
-	
+		float a;
+		float b;
 		
-	
+		float calculateField();
+		float calculateCircuit();
+		void displayData();
+		
+
+
+
 };
 
-	void Worker::showSurname(){
+
+	float Rectangle::calculateCircuit(){
+		return a*2+b*2;
+	}
+	float Rectangle::calculateField(){
+		return a*b;
+	}
+	void Rectangle::displayData(){
+		cout << "Pole to : " << calculateField() <<endl;
+		cout << "Obwod to : " << calculateCircuit() <<endl;
+		cout << "Bok a : " << a << " Bok b : " << b << endl;
+		
+	}
+
 	
-		cout << "Nazwisko:" << surname << endl;
-	};
-	string Worker::showPersonality(){
-		return "Imie i nazwisko" + name + "" + surname + "/n";
-		
-	};
-	void Worker::showAllData(){
-		cout << "Dane pracownika:\n" << Worker::showPersonality()
-		<< "Narodowoœæ:" << nationality << "\nRok urodzenia:"
-		<< yearBirthday << "r.," << "p³eæ:" <<gender;
-		
-		switch(gender){
-			case 'm':
-				cout << "mê¿czyzna\n";
-				break;
-			case'w':
-				cout << "kobieta\n";
-				break;
-			default:
-				cout << "-\n";	
-		}
-		
-		
-	};
 
 
 
 int main(int argc, char** argv) {
 	
-	setlocale(LC_CTYPE, "Polish");
 	
-	Worker pracownik;
-	pracownik.name = "Janusz";
-	pracownik.surname = "Nowak";
-	pracownik.nationality = "Polska";
-	pracownik.yearBirthday = 2006;
+	Rectangle rectangle;
 	
-	pracownik.showAllData();	
+	cout << "\nPodaj dlugosc a" << endl;
+	cin >> rectangle.a;
 	
+	cout << "\nPodaj dlugosc b" << endl;
+	cin >> rectangle.b;
 	
+
+	rectangle.displayData();
 	
 	return 0;
 }
