@@ -1,0 +1,50 @@
+#include <iostream>
+using namespace std;
+
+struct Date{
+	
+	int dd, mm, yyyy;
+	
+	
+};
+
+class Car{
+	public:
+		int id;
+		string brand;
+		string model;
+		string color;
+		unsigned short int horsePower;
+		float price;
+		Date dateOfProduction;
+	
+		void getData();
+		
+		Car(){
+			//id = 100;
+			color = "red";
+			brand = "chevrolet";
+			model = "corvette c6";
+			horsePower = 450;
+			price = 250000;
+			dateOfProduction = {11,11,2006};
+			
+			
+		};
+};
+
+void Car::getData(){
+	
+	cout <<  "Id: " << id << "\nMarka: " << brand << "\nModel: " << model <<
+	"\nData produkcji: " << dateOfProduction.yyyy << "\nMoc: " << horsePower <<"\nKolor: " 
+	<< color << "\nCena: " << price;
+	
+};
+	
+int main(int argc, char** argv) {
+	setlocale(LC_CTYPE, "polish");
+	Car ferrari;
+	ferrari.getData();
+	
+	return 0;
+}
